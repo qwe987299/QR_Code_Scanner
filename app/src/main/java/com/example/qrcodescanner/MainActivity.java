@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.util.DisplayMetrics;
@@ -50,6 +51,11 @@ public class MainActivity extends AppCompatActivity {
             record.edit()
                     .putString("QR Code Result", "")
                     .apply();
+        }
+        else if (id == R.id.author) {
+            Uri uri = Uri.parse("https://mnya.tw");
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }
