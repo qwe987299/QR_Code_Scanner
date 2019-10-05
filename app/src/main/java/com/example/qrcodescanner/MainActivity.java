@@ -15,6 +15,7 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -51,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
             record.edit()
                     .putString("QR Code Result", "")
                     .apply();
+            // 建立提示訊息
+            Toast.makeText(this, "記錄已刪除", Toast.LENGTH_SHORT).show();
         }
         else if (id == R.id.author) {
             Uri uri = Uri.parse("https://mnya.tw");
@@ -144,6 +147,8 @@ public class MainActivity extends AppCompatActivity {
                             record.edit()
                                     .putString("QR Code Result", share_result)
                                     .apply();
+                            // 建立提示訊息
+                            Toast.makeText(getApplicationContext(), "掃描成功", Toast.LENGTH_SHORT).show();
                         }
                     });
                 }
